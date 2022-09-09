@@ -22,6 +22,7 @@ const main = async () => {
     playSound("./assets/sound/beep_01.mp3")
     console.log("\n")
     console.log("-> Whale tracker is spinning-up ..")
+
     // Main Logic
     try {
         const tokenName = await contract.name()
@@ -42,6 +43,10 @@ const main = async () => {
                 console.log(`-> tx: https://etherscan.io/tx/${data.transactionHash}`)
             }
         })
+
+        setInterval(() => {
+            playSound("./assets/sound/sonar_01.mp3")
+        }, 10000)
     } catch (err) {
         console.log(err)
     }
